@@ -1,8 +1,9 @@
 package com.secon2012.algorithm;
 
-import java.util.ArrayList;
 import com.secon2012.model.FlowEdge;
 import com.secon2012.model.RegularNode;
+
+import java.util.ArrayList;
 
 public interface FlowNetwork {
 	public ArrayList<RegularNode> getV();

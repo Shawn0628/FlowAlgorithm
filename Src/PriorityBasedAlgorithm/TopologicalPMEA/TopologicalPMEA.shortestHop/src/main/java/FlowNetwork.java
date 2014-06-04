@@ -1,28 +1,20 @@
-package com.secon2012.algorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.secon2012.model.FlowEdge;
-import com.secon2012.model.RegularNode;
-import com.secon2012.util.Bag;
-
-public class EdmondsKarpFlowNetwork implements FlowNetwork{
+public class FlowNetwork {
     private ArrayList<RegularNode> V;
     private int E;
     private Bag<FlowEdge>[] adj;
     private ArrayList<RegularNode> sourceNodeList;
 	private ArrayList<RegularNode> splitNonDGNodeList;
-	private double transimitionRange;
     
-	@SuppressWarnings("unchecked")
-	public EdmondsKarpFlowNetwork(int p, ArrayList<RegularNode> array, double transimitionRange) {
+	public FlowNetwork(int p, ArrayList<RegularNode> array) {
 		// TODO Auto-generated constructor stub
 		this.V = array;
 		this.E = 0;
 		this.sourceNodeList = getSrcNodeList(p, array);
 		this.splitNonDGNodeList = getSplitNonDGNodeList(p, array);
-		this.transimitionRange = transimitionRange;
         adj = (Bag<FlowEdge>[]) new Bag[V.size()];
         for (int i = 0; i < V.size(); i++){
             adj[i] = new Bag<FlowEdge>();
@@ -33,26 +25,25 @@ public class EdmondsKarpFlowNetwork implements FlowNetwork{
         	addEdge(new FlowEdge(V.get(i), V.get(i+1), V.get(i).getEnergy(), true, false, 0));
         }
         
-        //Add edge between s and DG
-        for(int i=0; i<this.getSourceNodeList().size(); i++){
-        	addEdge(new FlowEdge(getV().get(V.size()-2), getSourceNodeList().get(i), getSourceNodeList().get(i).getDataItem(), false, false, 0));
-        }
-        
         //Add edge between non-DG and t
         for(int i = 0; i<splitNonDGNodeList.size(); i++){
         	addEdge(new FlowEdge(splitNonDGNodeList.get(i), V.get(V.size()-1),splitNonDGNodeList.get(i).getStorageCapacity() , false, false, 0));
         }
-        
+        int count = 0;
         //Add edge between two nodes if they are in transmission range.
         for(int i=0; i < V.size()-2; i=i+2){
         	for(int j=i+2; j<V.size()-2; j=j+2){
         		double distance = Math.sqrt(Math.pow(V.get(i).getX()-V.get(j).getX(), 2) + Math.pow(V.get(i).getY()-V.get(j).getY(), 2));
-        		if(distance <= this.transimitionRange){
+        		if(distance <= Command.TRANSMITIONRANGE){
         			addEdge(new FlowEdge(V.get(j+1), V.get(i),Double.POSITIVE_INFINITY, false, true, Math.pow(distance, 2) * 0.00032 + 0.32));
         			addEdge(new FlowEdge(V.get(i+1), V.get(j),Double.POSITIVE_INFINITY, false, true, Math.pow(distance, 2) * 0.00032 + 0.32) );
+        			count++;
         		}                                                                    
         	}
         }
+        System.out.println(count + " noded connect");
+        Collections.sort(sourceNodeList);
+        Collections.reverse(sourceNodeList);
 	}
 
 	private ArrayList<RegularNode> getSplitNonDGNodeList(int p, ArrayList<RegularNode> array) {

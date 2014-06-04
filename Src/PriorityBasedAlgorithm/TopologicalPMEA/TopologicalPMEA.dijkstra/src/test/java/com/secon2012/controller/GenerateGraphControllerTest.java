@@ -1,9 +1,10 @@
 package com.secon2012.controller;
 
-import java.util.NoSuchElementException;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.secon2012.model.FrameWorld;
 import com.secon2012.model.RegularNode;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.NoSuchElementException;
 
 public class GenerateGraphControllerTest {
 

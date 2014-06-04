@@ -1,18 +1,13 @@
 package com.secon2012.controller;
 
-import java.util.NoSuchElementException;
-
+import com.secon2012.algorithm.*;
+import com.secon2012.model.FrameWorld;
+import com.secon2012.model.RegularNode;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.secon2012.algorithm.EdmondsKarpFlowNetwork;
-import com.secon2012.algorithm.EdmondsKarpFordFulkerson;
-import com.secon2012.algorithm.HeuristicFordFulkerson;
-import com.secon2012.algorithm.OptimalFlowNetwork;
-import com.secon2012.algorithm.OptimalFordFulkerson;
-import com.secon2012.model.FrameWorld;
-import com.secon2012.model.RegularNode;
+import java.util.NoSuchElementException;
 
 public class CommandTest {
 	private static FrameWorld fw;

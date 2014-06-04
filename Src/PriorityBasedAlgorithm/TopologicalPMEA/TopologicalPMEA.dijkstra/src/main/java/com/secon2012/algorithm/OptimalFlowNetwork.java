@@ -1,11 +1,11 @@
 package com.secon2012.algorithm;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import com.secon2012.model.FlowEdge;
 import com.secon2012.model.RegularNode;
 import com.secon2012.util.Bag;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class OptimalFlowNetwork implements FlowNetwork {
 	private ArrayList<RegularNode> V;

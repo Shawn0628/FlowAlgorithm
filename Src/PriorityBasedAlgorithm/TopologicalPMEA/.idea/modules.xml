@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TopologicalPMEA.iml" filepath="$PROJECT_DIR$/TopologicalPMEA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TopologicalPMEA.main/TopologicalPMEA.main.iml" filepath="$PROJECT_DIR$/TopologicalPMEA.main/TopologicalPMEA.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TopologicalPMEA.dijkstra/TopologicalPMEA.dijkstra.iml" filepath="$PROJECT_DIR$/TopologicalPMEA.dijkstra/TopologicalPMEA.dijkstra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TopologicalPMEA.shortestHop/TopologicalPMEA.shortestHop.iml" filepath="$PROJECT_DIR$/TopologicalPMEA.shortestHop/TopologicalPMEA.shortestHop.iml" />
     </modules>
   </component>
 </project>

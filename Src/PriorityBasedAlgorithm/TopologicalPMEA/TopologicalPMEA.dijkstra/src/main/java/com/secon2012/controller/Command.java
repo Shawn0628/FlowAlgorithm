@@ -1,12 +1,8 @@
 package com.secon2012.controller;
 
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-
 import com.secon2012.model.FrameWorld;
+
+import java.io.*;
 
 public class Command {
 	private int dataItems;

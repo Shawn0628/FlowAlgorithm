@@ -1,14 +1,12 @@
 package com.secon2012.controller;
 
-import java.io.FileOutputStream;
-
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
-
 import com.secon2012.model.FrameWorld;
 import com.secon2012.model.RegularNode;
 import com.secon2012.util.StdRandom;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class GenerateGraphController {
 	private int dataItems;

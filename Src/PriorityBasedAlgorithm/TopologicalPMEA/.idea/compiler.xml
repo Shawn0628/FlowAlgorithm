@@ -22,10 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="TopologicalPMEA.dijkstra" />
         <module name="TopologicalPMEA.main" />
+        <module name="TopologicalPMEA.shortestHop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="TopologicalPMEA.dijkstra" target="1.6" />
       <module name="TopologicalPMEA.main" target="1.6" />
     </bytecodeTargetLevel>
   </component>
